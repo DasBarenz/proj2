@@ -1,0 +1,319 @@
+* {
+   box-sizing: border-box;
+}
+
+html, body {
+   padding: 0;
+   margin: 0;
+   height: 100%;   
+   background-color: rgb(219, 213, 198);
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*index*/
+.sick-girl {
+   margin-top: 250px;
+   position: absolute;
+   z-index: 3;
+}
+
+#bottom-piece {
+   width: 100%;
+   height: 285px;
+   background-color: rgb(201, 189, 165);
+   top: 520px;
+   position: fixed;
+}
+
+.intro-text1 {
+   margin-top: 100px;
+   font-size: 38px;
+   font-family: 'Raleway', sans-serif;
+   line-height: 42px;
+}
+
+.intro-text2 {
+   font-size: 28px;
+   font-family: 'Raleway', sans-serif;
+   padding-top: 16px;
+}
+
+.intro-text3 {
+   font-size: 22px;
+   font-family: 'Pragati Narrow', sans-serif;
+   padding-top: 20px;
+}
+
+#userName {
+   /* font-family: 'Thasadith', sans-serif; */
+   margin-top: -8px;
+   font-size: 20px;
+}
+
+.intro-text4 {
+   font-size: 22px;
+   font-family: 'Pragati Narrow', sans-serif;
+   margin-top: -22px;
+}
+
+.check-yes-no {
+   display: inline-flex;
+   font-size: 18px;
+   font-family: 'Barlow', sans-serif;
+   margin-left: 20px;
+   cursor: pointer;
+   margin-top: 10px;
+}
+
+.check-no {
+   padding-right: 30px;
+   cursor: pointer;
+}
+
+.check-yes:hover {
+   color: rgb(0, 189, 164);
+   font-weight: bolder;
+   font-size: 24px;
+   transition: all 500ms;
+   font-size-adjust: 20px;
+}
+
+.check-no:hover {
+   color: rgb(245, 95, 9);
+   font-weight: bolder;
+   font-size: 24px;
+   transition: all 500ms;
+   font-size-adjust: 20px;
+}
+
+.last-quote {
+   text-align: right;
+   color: rgb(39, 39, 38);
+}
+
+ .alert {
+   display: none;
+   margin-left: 40px;
+   top: 300px;
+   font-size: 17px;
+   font-weight: bolder;
+   z-index: 5;
+}
+
+/*main*/
+header {
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;   
+}
+header {
+   height: 60px;
+   background-color: rgb(201, 189, 165);
+  transition: 1s;
+   z-index: 5;
+}
+
+header:hover {
+   height: 200px;
+   background-color: rgb(201, 189, 165);
+   transition: transform .2s;
+   transition: 1s;
+   opacity: 0.5;
+}
+.logo {
+  font-family: 'Grand Hotel', cursive;
+   font-weight: bolder;
+   color: #fff;
+   padding-top: 10px;
+   padding-left: 20px;
+   font-size: 40px;
+   letter-spacing: 2px;
+   position: absolute;
+}
+
+#top, #middle, #bottom {
+   height:800px;
+}
+
+.main-text {
+   font-size: 25px;
+   margin-left: 200px;
+   margin-top: 150px;
+   font-family: 'Quicksand', sans-serif;
+}
+
+.sickboy-imgbtns {
+   margin-left: 50px;
+   margin-top: 5px;
+   width: 80%;
+}
+
+.sickboy {
+   background-color: rgb(250, 251, 252);
+   padding: 0px 7px 5px 7px;
+   margin-right: 20px;
+   margin-bottom: 10px;
+   border: 7px solid rgb(173, 162, 142);
+   border-bottom-right-radius: 75px;
+   border-top-right-radius: 75px;
+   border-top-left-radius: 75px;
+}
+.sickboy:hover {
+   border: 7px solid rgb(226, 223, 216);
+}
+
+.boy-container1 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy1:hover + .symptom-text1 {
+   opacity:1;
+}
+.symptom-text1:hover  {
+   opacity: 0.9;
+}
+.symptom-text1 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container2 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy2:hover + .symptom-text2 {
+   opacity:1;
+}
+.symptom-text2:hover  {
+   opacity: 0.9;
+}
+.symptom-text2 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+
+}
+
+.boy-container3 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy3:hover + .symptom-text3 {
+   opacity:1;
+}
+.symptom-text3:hover  {
+   opacity: 0.9;
+}
+.symptom-text3 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container4 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy4:hover + .symptom-text4 {
+   opacity:1;
+}
+.symptom-text4:hover  {
+   opacity: 0.9;
+}
+.symptom-text4 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container5 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy5:hover + .symptom-text5 {
+   opacity:1;
+}
+.symptom-text5:hover  {
+   opacity: 0.9;
+}
+.symptom-text5 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+
+/*middle*/
+.result-message {
+   width: 620px;
+   height: 750px;
+   margin: 250px 30px;
+   background-color: rgb(231, 235, 235);
+   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+
+}
+
+.message-logo {
+  font-family: 'Grand Hotel', cursive;
+   font-weight: bolder;
+   color: rgb(93, 93, 93);
+   padding-top: 50px;
+   padding-right: 30px;
+   font-size: 90px;
+   letter-spacing: 2px;
+   text-align: right;
+}
+
+.result-text {
+   font-size: 17px;
+   color: rgb(93, 93, 93);
+   margin: 30px;
+   line-height: 29px;
+}
