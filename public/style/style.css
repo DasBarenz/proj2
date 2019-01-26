@@ -6,7 +6,7 @@ html, body {
    padding: 0;
    margin: 0;
    height: 100%;   
-   background-color: rgb(219, 213, 198);
+   background-color: rgb(121, 112, 101);
 }
 
 .clearfix::after {
@@ -17,21 +17,21 @@ html, body {
 
 /*index*/
 .sick-girl {
-   margin-top: 250px;
+   margin-top: 280px;
    position: absolute;
    z-index: 3;
 }
 
 #bottom-piece {
    width: 100%;
-   height: 285px;
+   height: 315px;
    background-color: rgb(201, 189, 165);
-   top: 520px;
+   top: 560px;
    position: fixed;
 }
 
 .intro-text1 {
-   margin-top: 100px;
+   margin-top: 90px;
    font-size: 38px;
    font-family: 'Raleway', sans-serif;
    line-height: 42px;
@@ -40,19 +40,31 @@ html, body {
 .intro-text2 {
    font-size: 28px;
    font-family: 'Raleway', sans-serif;
-   padding-top: 16px;
+   padding-top: 7px;
 }
 
 .intro-text3 {
    font-size: 22px;
    font-family: 'Pragati Narrow', sans-serif;
-   padding-top: 20px;
+   margin-top: 1px;
 }
 
-#userName {
+.intro-text3-2 {
+   font-size: 22px;
+   font-family: 'Pragati Narrow', sans-serif;
+   margin-top: -30px;
+}
+
+#input-name {
    /* font-family: 'Thasadith', sans-serif; */
    margin-top: -8px;
-   font-size: 20px;
+   font-size: 17px;
+}
+
+#input-zipcode {
+   /* font-family: 'Thasadith', sans-serif; */
+   margin-top: -8px;
+   font-size: 17px;
 }
 
 .intro-text4 {
@@ -67,7 +79,7 @@ html, body {
    font-family: 'Barlow', sans-serif;
    margin-left: 20px;
    cursor: pointer;
-   margin-top: 10px;
+   margin-top: 6px;
 }
 
 .check-no {
@@ -99,24 +111,24 @@ html, body {
  .alert {
    display: none;
    margin-left: 40px;
-   top: 300px;
+   top: 330px;
    font-size: 17px;
    font-weight: bolder;
    z-index: 5;
 }
 
-/*main*/
-header {
-   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;   
-}
+/*header*/
 header {
    height: 60px;
    background-color: rgb(201, 189, 165);
-  transition: 1s;
-   z-index: 5;
+   transition: 1s;
+   z-index: 2;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0; 
+   display: inline-flex;
+    /* overflow: auto; */
 }
 
 header:hover {
@@ -124,8 +136,17 @@ header:hover {
    background-color: rgb(201, 189, 165);
    transition: transform .2s;
    transition: 1s;
-   opacity: 0.5;
+   opacity: 0.4;
 }
+
+header nav {
+   position: absolute;
+   right: 20px;
+   margin-top: 25px;
+   font-size: 18px;
+   z-index: 3;
+}
+
 .logo {
   font-family: 'Grand Hotel', cursive;
    font-weight: bolder;
@@ -137,15 +158,60 @@ header:hover {
    position: absolute;
 }
 
-#top, #middle, #bottom {
-   height:800px;
+#header-message {
+   font-size: 52px;
+   font-family: 'Quicksand', sans-serif;
+   color: #fff;
+   margin-left: 400px;
+   position:absolute;
+   -webkit-animation: move 1s infinite; /* Safari 4.0 - 8.0 */
+   -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+   animation: move 1s infinite;
+   animation-direction: alternate;
+   z-index: 3;
 }
 
+@-webkit-keyframes move {
+  from {top: 150px;}
+  to {top: 25px;}
+}
+
+a {
+  text-decoration: none;
+  font-weight: 300;
+}
+header a:hover {
+   color: rgb(153, 23, 6);
+   text-decoration: none;
+   font-weight: 900;
+}
+ul {
+   list-style: none;
+}
+li {
+   display: inline-block;
+   padding-left: 35px;
+   font-family: 'Maven Pro', sans-serif;
+}
+
+li:hover {
+   text-decoration: none;
+}
+
+header li a.active {
+   color: #fff;
+   font-weight: bold;
+}
+
+
+/*symptoms*/
 .main-text {
    font-size: 25px;
    margin-left: 200px;
    margin-top: 150px;
    font-family: 'Quicksand', sans-serif;
+   padding-bottom: 20px;
+   color: rgb(41, 39, 35);
 }
 
 .sickboy-imgbtns {
@@ -214,7 +280,6 @@ header:hover {
    opacity: 0;
    position:absolute;
    transition: .5s ease;
-
 }
 
 .boy-container3 {
@@ -289,15 +354,215 @@ header:hover {
    transition: .5s ease;
 }
 
+.boy-container6 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy6:hover + .symptom-text6 {
+   opacity:1;
+}
+.symptom-text6:hover  {
+   opacity: 0.9;
+}
+.symptom-text6 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
 
-/*middle*/
+.boy-container7 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy7:hover + .symptom-text7 {
+   opacity:1;
+}
+.symptom-text7:hover  {
+   opacity: 0.9;
+}
+.symptom-text7 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container8 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy8:hover + .symptom-text8 {
+   opacity:1;
+}
+.symptom-text8:hover  {
+   opacity: 0.9;
+}
+.symptom-text8 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container9 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy9:hover + .symptom-text9 {
+   opacity:1;
+}
+.symptom-text9:hover  {
+   opacity: 0.9;
+}
+.symptom-text9 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.boy-container10 {
+   display:inline-flex;
+  position:relative;
+  cursor: pointer;
+}
+.btn-sickboy10:hover + .symptom-text10 {
+   opacity:1;
+}
+.symptom-text10:hover  {
+   opacity: 0.9;
+}
+.symptom-text10 {
+   background-color: rgb(219, 121, 109);
+   color: white;
+   font-size: 15px;
+   padding: 5px 10px;
+   top: 50%;
+   width:auto;
+   text-align:center;
+   opacity: 0;
+   position:absolute;
+   transition: .5s ease;
+}
+
+.symptom-check-btn {
+   background-color: rgb(129, 120, 104);
+   color: #fff;
+   padding: 10px 25px;
+   width: 180px;
+   font-size: 20px;
+   margin-top: 250px;
+   cursor: pointer;
+   align-content: initial;
+   font-family: 'Maven Pro', sans-serif;
+   transition: 1s ease-in-out;   
+}
+
+.symptom-check-btn:hover {
+   background-color: rgba(173, 162, 142, 0.7);
+   color: #fff;
+   width: 480px;
+   margin-top: 250px;
+   transform: scale(1.8);
+   font-family: 'Grand Hotel', cursive;
+   font-size: 30px;
+}
+
+.message-for-click {
+   font-family: 'Quicksand', sans-serif;
+   font-size: 20px;
+   padding-top:10px;
+   color: rgb(41, 39, 35);
+}
+
+.loading{
+   font-size: 27px;
+   font-family: 'Quicksand', sans-serif;
+   color: rgb(129, 120, 104);
+}
+
+ /*Overlay*/
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(166, 216, 224);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+            .overlay {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+
+
+/*results*/
+.desk-bg {
+   background-image: url("../img/desk-bg.png");
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   height: auto;
+   position: relative;
+}
+
 .result-message {
-   width: 620px;
-   height: 750px;
-   margin: 250px 30px;
+   width: 780px;
+   height: 920px;
+   margin: 220px 90px;
    background-color: rgb(231, 235, 235);
    box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
-
+   transform: rotate(-5deg);
+   -ms-transform: rotate(-5deg); /* IE 9 */
+   -webkit-transform: rotate(-5deg); /* Safari and Chrome */
 }
 
 .message-logo {
@@ -312,8 +577,27 @@ header:hover {
 }
 
 .result-text {
-   font-size: 17px;
+   font-size: 28px;
    color: rgb(93, 93, 93);
    margin: 30px;
-   line-height: 29px;
+   line-height: 39px;
+}
+
+
+
+/*footer*/
+footer {
+    background: rgb(173, 162, 142);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-top: 80px;
+    padding-right: 70px;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;   
 }

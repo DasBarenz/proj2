@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/reset.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Maven+Pro|Pragati+Narrow|Quicksand|Raleway" rel="stylesheet">
+
+    <!-- Fonts Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <!-- jQuery -->
+    <script src='https://code.jquery.com/jquery.js'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
+
+    <!-- Compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+    <title>:::....uFlu?....:::</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">uFlu? </div>
+
+        <span id="header-message">"Hope you feel better soon!"</span>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home / </a></li>
+                <li><a href="./symptoms.html" class="active">Symptoms / </a></li>
+                <li><a href="./results.html">Result / </a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div id="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-text">Hi!&nbsp <span id="user-name">_________</span>, <br><br>
+                    Are you not feeling well? <br>
+                    Which symptoms are you feeling?
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-9">
+                <section class="sickboy-imgbtns" class="clearfix">
+
+                    <div class="boy-container1">
+                        <img src="./img/sick-boy-sorethroat.png" id="btn-boy1" class="btn-sickboy1 sickboy" />
+                        <span class="symptom-text1">Sore Throat</span>
+                    </div>
+
+                    <div class="boy-container2">
+                        <img src="./img/sick-boy-headache.png" id="btn-boy2" class="btn-sickboy2 sickboy" />
+                        <span class="symptom-text2">Headache</span>
+                    </div>
+
+                    <div class="boy-container3">
+                        <img src="./img/sick-boy-chills.png" id="btn-boy3" class="btn-sickboy3 sickboy" />
+                        <span class="symptom-text3">Chills</span>
+                    </div>
+
+                    <div class="boy-container4">
+                        <img src="./img/sick-boy-runnynose.png" id="btn-boy4" class="btn-sickboy4 sickboy" />
+                        <span class="symptom-text4">Runny nose</span>
+                    </div>
+
+                    <div class="boy-container5">
+                        <img src="./img/sick-boy-fever.png" id="btn-boy5" class="btn-sickboy5 sickboy" />
+                        <span class="symptom-text5">Fever</span>
+                    </div>
+
+                    <div class="boy-container6">
+                        <img src="./img/sick-boy-sweats.png" id="btn-boy6" class="btn-sickboy6 sickboy" />
+                        <span class="symptom-text6">Sweats</span>
+                    </div>
+
+                    <div class="boy-container7">
+                        <img src="./img/sick-boy-fatigue.png" id="btn-boy7" class="btn-sickboy7 sickboy" />
+                        <span class="symptom-text7">Fatigue</span>
+                    </div>
+
+                    <div class="boy-container8">
+                        <img src="./img/sick-boy-nausea.png" id="btn-boy8" class="btn-sickboy8 sickboy" />
+                        <span class="symptom-text8">Nausea</span>
+                    </div>
+
+                    <div class="boy-container9">
+                        <img src="./img/sick-boy-rash.png" id="btn-boy9" class="btn-sickboy9 sickboy" />
+                        <span class="symptom-text9">Rash</span>
+                    </div>
+
+                    <div class="boy-container10">
+                        <img src="./img/sick-boy-diarrhea.png" id="btn-boy10" class="btn-sickboy10 sickboy" />
+                        <span class="symptom-text10">Diarrhea</span>
+                    </div>
+
+                    <div class="message-for-click">Then click the button on the right for getting the result.</div>
+                </section>
+            </div>
+
+            <div class="col-md-1">
+                <div id="symptoms-btn" class="symptom-check-btn" onclick="loadingOverlay()">meFlu?</div>
+            </div>
+            <div class="col-md-1"></div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+
+    </div>
+
+    <!--overlay-->
+    <div id="myLoading" class="overlay">
+
+        <div class="overlay-content">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="loading">Loading...</div>
+                <div class="col-md-8">
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>uFlu ? &copy 2019</footer>
+
+    <!--Added link to the JavaScript -->
+    <script type="text/javascript" src="./js/script.js"></script>
+
+</body>
+
+</html>

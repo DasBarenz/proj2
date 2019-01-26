@@ -3,34 +3,55 @@
 $(document).ready(function () {
 
     $(".check-no").click(function () {
-        $(".alert").show();
+        $(".alert-info").show();
         setTimeout(function () {
-            $(".alert").hide();
+            $(".alert-info").hide();
         }, 2000);
     });
 
+
+
     $(".check-yes").click(function () {
 
-        var inputName = $("#input-name").val();
+        var inputName = $("#input-name").val().trim();
 
         if (!inputName) {
-            alert("Please input your name.");
-            return;
+
+            $(".alert-danger").show();
+            setTimeout(function () {
+                $(".alert-danger").hide();
+            }, 2000);
+
+        } else {
+            $.post("/api/welcome", {
+                data: inputName
+            }).then(
+                function () {
+                    console.log(inputName);
+                }
+            );
+
+            window.location.href = './symptoms.html';
+
+            $("#user-name").val(inputName);
         }
-
-        // $(function () {
-        //     $.get("./main.html", function (result) {
-        //         $("#user-name").val(inputName);
-        //     });
-        // });
-
-        window.location.href = './main.html';
-
-
-        $("#user-name").val(inputName);
     });
+
+    $("header").hover(function () {
+        $("#header-message").show();
+    },
+        function () {
+            $("#header-message").hide();
+        });
+
 
 
 });
 
+function loadingOverlay() {
+    document.getElementById("myLoading").style.display = "block";
+}
 
+function closingOverlay() {
+    document.getElementById("myLoading").style.width = "0%";
+}
