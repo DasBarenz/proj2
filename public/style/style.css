@@ -139,14 +139,6 @@ header:hover {
    opacity: 0.4;
 }
 
-header nav {
-   position: absolute;
-   right: 20px;
-   margin-top: 25px;
-   font-size: 18px;
-   z-index: 3;
-}
-
 .logo {
   font-family: 'Grand Hotel', cursive;
    font-weight: bolder;
@@ -176,32 +168,53 @@ header nav {
   to {top: 25px;}
 }
 
-a {
-  text-decoration: none;
-  font-weight: 300;
+/*side nav*/
+.nav-icon {
+   margin-top: 150px;
+   /* top: 330; */
+   font-size: 30px;
+   cursor: pointer;
 }
-header a:hover {
-   color: rgb(153, 23, 6);
-   text-decoration: none;
-   font-weight: 900;
-}
-ul {
-   list-style: none;
-}
-li {
-   display: inline-block;
-   padding-left: 35px;
+.sidenav {
+   height: auto;
+   width: 0;
+   position: fixed;
+   z-index: 1;
+   top: 40;
+   left: 0;
+   background-color: rgba(78, 70, 63, 0.8);
+   overflow-x: hidden;
+   transition: 0.5s;
+   padding-top: 7px;
    font-family: 'Maven Pro', sans-serif;
 }
 
-li:hover {
-   text-decoration: none;
+.sidenav a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
-header li a.active {
-   color: #fff;
-   font-weight: bold;
+.sidenav a:hover {
+  color: #f1f1f1;
 }
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 
 
 /*symptoms*/

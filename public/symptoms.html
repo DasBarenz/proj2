@@ -39,28 +39,37 @@
 
     <header>
         <div class="logo">uFlu? </div>
-
         <span id="header-message">"Hope you feel better soon!"</span>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home / </a></li>
-                <li><a href="./symptoms.html" class="active">Symptoms / </a></li>
-                <li><a href="./results.html">Result / </a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
 
     </header>
 
     <div id="container-fluid">
+
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1">
+                <div id="mySidenav" class="sidenav">
+                    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+                    <nav>
+                        <ul>
+                            <li><a href="./index.html">Home </a></li>
+                            <li><a href="./symptoms.html" class="active">Symptoms </a></li>
+                            <li><a href="./results.html">Result </a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-icon" onclick="openNav()">open</div>
+            </div>
+
+            <div class="col-md-10">
                 <div class="main-text">Hi!&nbsp <span id="user-name">_________</span>, <br><br>
                     Are you not feeling well? <br>
                     Which symptoms are you feeling?
-
                 </div>
             </div>
+
+            <div class="col-md-1"></div>
+
         </div>
 
         <div class="row">

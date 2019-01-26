@@ -28,10 +28,9 @@ $(document).ready(function () {
             }).then(
                 function () {
                     console.log(inputName);
+                    window.location.href = `/api/user/${inputName}`
                 }
             );
-
-            window.location.href = './symptoms.html';
 
             $("#user-name").val(inputName);
         }
@@ -54,4 +53,12 @@ function loadingOverlay() {
 
 function closingOverlay() {
     document.getElementById("myLoading").style.width = "0%";
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
 }

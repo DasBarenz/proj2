@@ -12,7 +12,20 @@ module.exports = function (app) {
   app.post("/api/welcome", function (req, res) {
     // db.UserInfo.findAll({}).then(function (dbUserInfos) {
     console.log(req.body.data);
-    res.render("symptoms", { name: req.body.data });
+    var userInput = req.body.data;
+    var hbsObj = {
+      name: req.body.data
+    };
+    // res.render("symptoms", {
+    //   name: 'Evan'
+    // });
+    // });
+    // res.redirect(`/testing/${userInput}`)
+    res.json(userInput);
+  });
+
+  app.get("/api/user/:username", function (req, res) {
+    res.render("symptoms", { name: req.params.username })
   });
 
 
