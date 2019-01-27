@@ -1,0 +1,108 @@
+<header>
+    <div class="logo">uFlu? </div>
+
+    <span id="header-message">"Hope you feel better soon!"</span>
+
+</header>
+
+<div id="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br><br>
+                Are you not feeling well? <br>
+                Which symptoms are you feeling?
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-9">
+            <section class="sickboy-imgbtns" class="clearfix">
+
+                <div class="boy-container1 boy-container" onclick="symptomClick()">
+                    <img src="/img/sick-boy-sorethroat.png" id="btn-boy1" class="btn-sickboy1 sickboy" />
+                    <span class="symptom-text1">Sore Throat</span>
+                </div>
+
+                <div class="boy-container2 boy-container" onclick="symptomClick()">
+                    <img src="/img/sick-boy-headache.png" id="btn-boy2" class="btn-sickboy2 sickboy" />
+                    <span class="symptom-text2">Headache</span>
+                </div>
+
+                <div class="boy-container3 boy-container" onclick="symptomClick()">
+                    <img src="/img/sick-boy-chills.png" id="btn-boy3" class="btn-sickboy3 sickboy" />
+                    <span class="symptom-text3">Chills</span>
+                </div>
+
+                <div class="boy-container4 boy-container" onclick="symptomClick()">
+                    <img src="/img/sick-boy-runnynose.png" id="btn-boy4" class="btn-sickboy4 sickboy" />
+                    <span class="symptom-text4">Runny nose</span>
+                </div>
+
+                <div class="boy-container5 boy-container" onclick="symptomClick()">
+                    <img src="/img/sick-boy-fever.png" id="btn-boy5" class="btn-sickboy5 sickboy" />
+                    <span class="symptom-text5">Fever</span>
+                </div>
+
+                <div class="boy-container6">
+                    <img src="/img/sick-boy-sweats.png" id="btn-boy6" class="btn-sickboy6 sickboy" />
+                    <span class="symptom-text6">Sweats</span>
+                </div>
+
+                <div class="boy-container7">
+                    <img src="/img/sick-boy-fatigue.png" id="btn-boy7" class="btn-sickboy7 sickboy" />
+                    <span class="symptom-text7">Fatigue</span>
+                </div>
+
+                <div class="boy-container8">
+                    <img src="/img/sick-boy-nausea.png" id="btn-boy8" class="btn-sickboy8 sickboy" />
+                    <span class="symptom-text8">Nausea</span>
+                </div>
+
+                <div class="boy-container9">
+                    <img src="/img/sick-boy-rash.png" id="btn-boy9" class="btn-sickboy9 sickboy" />
+                    <span class="symptom-text9">Rash</span>
+                </div>
+
+                <div class="boy-container10">
+                    <img src="/img/sick-boy-diarrhea.png" id="btn-boy10" class="btn-sickboy10 sickboy" />
+                    <span class="symptom-text10">Diarrhea</span>
+                </div>
+
+                <div class="message-for-click">Then click the button on the right for getting the result.</div>
+            </section>
+        </div>
+
+        <div class="col-md-1">
+            <button id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</button>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+
+</div>
+
+<!--overlay-->
+<div id="myLoading" class="overlay">
+
+    <div class="overlay-content">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="loading">Loading...</div>
+            <div class="col-md-8">
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+<footer>uFlu ? &copy 2019</footer>
