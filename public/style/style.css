@@ -238,13 +238,21 @@ header:hover {
    padding: 0px 7px 5px 7px;
    margin-right: 20px;
    margin-bottom: 10px;
-   border: 7px solid rgb(173, 162, 142);
+  
    border-bottom-right-radius: 75px;
    border-top-right-radius: 75px;
    border-top-left-radius: 75px;
 }
 .sickboy:hover {
    border: 7px solid rgb(226, 223, 216);
+}
+
+.selected-symptom {
+   border: 7px solid rgb(226, 223, 216);
+}
+
+.unselected-symptom {
+   border: 7px solid rgb(173, 162, 142);
 }
 
 .boy-container1 {

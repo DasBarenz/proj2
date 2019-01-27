@@ -17,7 +17,7 @@ module.exports = function (app) {
         zipcode: zipCode,
       })
       .then(function (dbUserInfo) {
-        // Get lat and lon from the zipcode
+        // Get lat and lon from the zipcode - TODO - error message for not putting in a valid zipcode
         db.ZipCode.findOne({ where: { zip: zipCode } }).then(function (dbZipCodes) {
           var lat = dbZipCodes.lat;
           var lng = dbZipCodes.lng;
@@ -46,7 +46,7 @@ module.exports = function (app) {
   // Get the number of symptoms and add to the database
   app.post('/api/userdata', function (req, res) {
     db.UserInfo
-      .update({ score: req.body.score }, { where: { name: req.body.id } })
+      .update({ score: req.body.score }, { where: { id: req.body.id } })
       .then(function (dbUserInfos) {
         res.json(dbUserInfos);
       });

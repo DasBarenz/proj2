@@ -44,15 +44,41 @@ $("header").hover(function () {
     });
 
 // Count symptoms
-function symptomClick() {
-    nSymptoms++;
+// function symptomClick() {
+//     console.log($(this));
+//     nSymptoms++;
+// }
+var clickedBtns = [];
+
+$(document).on('click','.sickboy', function(){
+    var elementToChangeBorderId = $(this).attr('id');
+    var potentialIndexOfEl = clickedBtns.indexOf(elementToChangeBorderId);
+    if(potentialIndexOfEl > -1){
+        clickedBtns.splice(potentialIndexOfEl, 1);
+        revertBorderGray(elementToChangeBorderId);
+    }
+    else{
+        clickedBtns.push(elementToChangeBorderId);
+        changeBorderGray(elementToChangeBorderId);
+    }
+   
+});
+
+function changeBorderGray(id){
+    $(`#${id}`).removeClass('unselected-symptom');
+    $(`#${id}`).addClass('selected-symptom');
+}
+
+function revertBorderGray(id){
+    $(`#${id}`).removeClass('selected-symptom');
+    $(`#${id}`).addClass('unselected-symptom');
 }
 
 // Get results when button pushed
 function getResults() {
     $.post("/api/userdata", {
         id: localStorage.userId,
-        score: nSymptoms
+        score: clickedBtns.length
     }).then(
         function (dbUserInfo) {
             window.location.href = `/api/user/${localStorage.userName}/results`
