@@ -1,64 +1,61 @@
 /*intro*/
 
-$(document).ready(function () {
+var nSymptoms = 0;
 
-    $(".check-no").click(function () {
-        $(".alert-info").show();
-        setTimeout(function () {
-            $(".alert-info").hide();
-        }, 2000);
-    });
-
-
-
-    $(".check-yes").click(function () {
-
-        var inputName = $("#input-name").val().trim();
-
-        if (!inputName) {
-
-            $(".alert-danger").show();
-            setTimeout(function () {
-                $(".alert-danger").hide();
-            }, 2000);
-
-        } else {
-            $.post("/api/welcome", {
-                data: inputName
-            }).then(
-                function () {
-                    console.log(inputName);
-                    window.location.href = `/api/user/${inputName}`
-                }
-            );
-
-            $("#user-name").val(inputName);
-        }
-    });
-
-    $("header").hover(function () {
-        $("#header-message").show();
-    },
-        function () {
-            $("#header-message").hide();
-        });
-
-
-
+// User is under-age
+$(".check-no").click(function () {
+    $(".alert-info").show();
+    setTimeout(function () {
+        $(".alert-info").hide();
+    }, 2000);
 });
 
-function loadingOverlay() {
-    document.getElementById("myLoading").style.display = "block";
+// User checks yes to enter symptoms
+$(".check-yes").click(function () {
+    var inputName = $("#input-name").val().trim();
+    var zipCode = $("#input-zipcode").val().trim();
+
+    if (!inputName) {
+        $(".alert-danger").show();
+        setTimeout(function () {
+            $(".alert-danger").hide();
+        }, 2000);
+    } else {
+        $.post("/api/welcome", {
+            userName: inputName,
+            zipCode: zipCode
+        }).then(
+            function (dbUserInfo) {
+                localStorage.userName = dbUserInfo.name;
+                localStorage.userId = dbUserInfo.id;
+                localStorage.zipCode = dbUserInfo.zipcode;
+                window.location.href = `/api/user/${localStorage.userName}`
+            }
+        );
+    }
+});
+
+// Header message
+$("header").hover(function () {
+    $("#header-message").show();
+},
+    function () {
+        $("#header-message").hide();
+    });
+
+// Count symptoms
+function symptomClick() {
+    nSymptoms++;
 }
 
-function closingOverlay() {
-    document.getElementById("myLoading").style.width = "0%";
-}
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+// Get results when button pushed
+function getResults() {
+    $.post("/api/userdata", {
+        id: localStorage.userId,
+        score: nSymptoms
+    }).then(
+        function (dbUserInfo) {
+            window.location.href = `/api/user/${localStorage.userName}/results`
+        }
+    );
+};

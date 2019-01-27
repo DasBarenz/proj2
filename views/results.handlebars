@@ -1,13 +1,6 @@
 <header>
     <div class="logo">uFlu? </div>
     <span id="header-message">"Hope you feel better soon!"</span>
-    <nav>
-        <ul>
-            <li><a href="./index.html">Home / </a></li>
-            <li><a href="./symptoms.html" class="active">Symptoms / </a></li>
-            <li><a href="./results.html">Result / </a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
 </header>
 
 <div id="container-fluid" class="desk-bg">
@@ -17,11 +10,11 @@
         <div class="col-md-8">
             <div class="result-message">
                 <div class="message-logo">uFlu? </div>
-                <div class="result-text">Hi!&nbsp <span id="user-name">_________ </span>, <br>
-                    Based on your symptoms, you might have <span id="diagnosis-result"> __________ .</span> <br>
+                <div class="result-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br>
+                    Based on your symptoms, you might have <span id="diagnosis-result">{{severity}}.</span> <br>
                     Below is a list of recommended items to help you feel more comfortable. <br>
-                    <span id="items"> __________ .</span><br>
-                    We suggest that you get some medication. Here is a <div id="walgreens-links">link</div>to
+                    <span id="items">{{cureList}}.</span><br>
+                    We suggest that you get some medication. Here is a map <div id="walgreens-links">{{drugstoreLink}}</div>of
                     some nearby
                     Walgreens locations in your area. <br>
                     Also, if you can't contact your family doctor, try <a href="https://www.teladoc.com/">Teladoc

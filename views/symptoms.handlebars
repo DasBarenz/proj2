@@ -2,14 +2,6 @@
     <div class="logo">uFlu? </div>
 
     <span id="header-message">"Hope you feel better soon!"</span>
-    <nav>
-        <ul>
-            <li><a href="./index.html">Home / </a></li>
-            <li><a href="./symptoms.html" class="active">Symptoms / </a></li>
-            <li><a href="./results.html">Result / </a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
 
 </header>
 
@@ -30,27 +22,27 @@
         <div class="col-md-9">
             <section class="sickboy-imgbtns" class="clearfix">
 
-                <div class="boy-container1">
+                <div class="boy-container1 boy-container" onclick="symptomClick()">
                     <img src="/img/sick-boy-sorethroat.png" id="btn-boy1" class="btn-sickboy1 sickboy" />
                     <span class="symptom-text1">Sore Throat</span>
                 </div>
 
-                <div class="boy-container2">
+                <div class="boy-container2 boy-container" onclick="symptomClick()">
                     <img src="/img/sick-boy-headache.png" id="btn-boy2" class="btn-sickboy2 sickboy" />
                     <span class="symptom-text2">Headache</span>
                 </div>
 
-                <div class="boy-container3">
+                <div class="boy-container3 boy-container" onclick="symptomClick()">
                     <img src="/img/sick-boy-chills.png" id="btn-boy3" class="btn-sickboy3 sickboy" />
                     <span class="symptom-text3">Chills</span>
                 </div>
 
-                <div class="boy-container4">
+                <div class="boy-container4 boy-container" onclick="symptomClick()">
                     <img src="/img/sick-boy-runnynose.png" id="btn-boy4" class="btn-sickboy4 sickboy" />
                     <span class="symptom-text4">Runny nose</span>
                 </div>
 
-                <div class="boy-container5">
+                <div class="boy-container5 boy-container" onclick="symptomClick()">
                     <img src="/img/sick-boy-fever.png" id="btn-boy5" class="btn-sickboy5 sickboy" />
                     <span class="symptom-text5">Fever</span>
                 </div>
@@ -85,7 +77,7 @@
         </div>
 
         <div class="col-md-1">
-            <div id="symptoms-btn" class="symptom-check-btn" onclick="loadingOverlay()">meFlu?</div>
+            <button id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</button>
         </div>
         <div class="col-md-1"></div>
 

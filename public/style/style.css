@@ -500,7 +500,7 @@ header:hover {
    transition: 1s ease-in-out;   
 }
 
-.symptom-check-btn:hover {
+/* .symptom-check-btn:hover {
    background-color: rgba(173, 162, 142, 0.7);
    color: #fff;
    width: 480px;
@@ -508,7 +508,7 @@ header:hover {
    transform: scale(1.8);
    font-family: 'Grand Hotel', cursive;
    font-size: 30px;
-}
+} */
 
 .message-for-click {
    font-family: 'Quicksand', sans-serif;
