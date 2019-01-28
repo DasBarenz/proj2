@@ -1,6 +1,6 @@
 <header>
     <div class="logo">uFlu? </div>
-    <span id="header-message">"Hope you feel better soon!"</span>
+    <span id="header-message">{{rquote}}</span>
 </header>
 
 <div id="container-fluid" class="desk-bg">
@@ -12,11 +12,11 @@
                 <div class="message-logo">uFlu? </div>
                 <div class="result-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br>
                     Based on your symptoms, you might have <span id="diagnosis-result">{{severity}}.</span> <br>
-                    Below is a list of recommended items to help you feel more comfortable. <br>
-                    <span id="items">{{cureList}}.</span><br>
-                    We suggest that you get some medication. Here is a map <div id="walgreens-links">{{drugstoreLink}}</div>of
-                    some nearby
-                    Walgreens locations in your area. <br>
+                    Below is a list of recommended items to help you feel more comfortable:<br>
+                    <span id="items">{{#each cureList}}<li>{{this}}</li>{{/each}}</span>
+                    We suggest that you get some medication.<br>
+                    {{!-- Here is a map <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=pharmacy&&zoom=13&key=AIzaSyCBAUrhIbvz3xZoeo5--j9mFDf-Zpo8EC8" allowfullscreen></iframe>of
+                    some pharmacies in your area. <br> --}}
                     Also, if you can't contact your family doctor, try <a href="https://www.teladoc.com/">Teladoc
                     </a>.
                     <br>
@@ -28,3 +28,14 @@
     </div>
 
 </div>
+
+
+{{!-- this is the code/pseudo code that Lindsay said would belong here, to get symptom count ....the other part of this is in js/script.js--}}
+{{!-- <script>
+function getLocalStorage () {
+    var userId = localStorage.getItem("score") ///i suspect this need to be score
+    console.log(userId)
+}
+
+getLocalStorage()
+</script> --}}
