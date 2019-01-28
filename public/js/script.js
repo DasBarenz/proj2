@@ -32,6 +32,11 @@ $(".check-yes").click(function () {
                 window.location.href = `/api/user/${localStorage.userName}`
             }
         );
+        // console.log("Checking yes.")
+        // localStorage.userName = "Sarah";
+        //         localStorage.userId = "1";
+        //         localStorage.zipCode = "80212";
+        //         window.location.href = `/api/user/${localStorage.userName}`
     }
 });
 
@@ -79,9 +84,19 @@ function getResults() {
     $.post("/api/userdata", {
         id: localStorage.userId,
         score: clickedBtns.length
+        // how can we push this length to local storage? this is what we will need below if we don't go a DB option with counting the score
     }).then(
         function (dbUserInfo) {
             window.location.href = `/api/user/${localStorage.userName}/results`
         }
     );
 };
+
+// get info from results.handelbars page, then
+// if (localStorage.score >= 7) { 
+//     //  put API route for severe or.... insert into div "We are sorry you are feeling so under-the-weather. You may need to contact you doctor."
+//   } else if ( localStorage.score >= 3) {
+//       //put API route for moderate or.... insert into div "We are sorry you're sick! You may need some over-the-counter medication. Please discuss with a pharmacist at the following locations." DISPLAY MAP
+//   } else {
+//       //put API route for minimum or .... insert into div "Some preventative measures may keep you from getting sick! We recommend......"
+//   }

@@ -3,7 +3,19 @@ var db = require('../models');
 module.exports = function (app) {
   var drugstoreLink = "";
   var severity = "";
-  var cureList = [];
+  var cureList = ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"];
+  var medicineList = ["Pain Relievers (like ibuprofen or acetaminophen) to refuce fever, headaches, and body aches.","Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure","Cough Suppressants (like dextromethorphan) to help soothe a dry cough","Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"];
+  var message = ["Hope you feel better soon!", "Wishing you a speedy recovery!", "Sending good, healthy vibes your way!", "Hang in there! Better days are coming!"];
+  var rquote = getRandomQuote(message);
+  console.log(rquote);
+
+  function getRandomQuote(message) {
+    console.log(Math.floor(Math.random() * message.length))
+    return message[Math.floor(Math.random() * message.length)];
+    location.reload();
+  }
+
+
 
   // Get user name and zip code from welcome page and create new user
   app.post("/api/welcome", function (req, res) {
@@ -40,7 +52,7 @@ module.exports = function (app) {
 
     // TODO expand to include severity, medicine list and Walgreens link
 
-    res.render("results", { name: req.params.username, severity: severity, cureList: cureList, drugstoreLink: drugstoreLink })
+    res.render("results", { name: req.params.username, severity: severity, cureList: cureList, drugstoreLink: drugstoreLink, rquote: rquote, medicineList: medicineList })
   });
 
   // Get the number of symptoms and add to the database
