@@ -23,15 +23,14 @@
             </div>
             <div class="result-message2">
                 <div class="result-text2">
-                    We suggest that you get some medication. Here is a list:<br>
+                    {{medicineHeader}} <br>
                     <span id="items">{{#each medicineList}}<li>{{this}}</li>{{/each}}</span>
                 </div>
             </div>
 
             <div class="result-message3">
                 <div class="result-text3">
-                    Here is a map to some pharmacies in your area. <iframe id="location-map" src="https://www.google.com/maps/embed/v1/search?q=pharmacy&&zoom=13&key=AIzaSyCBAUrhIbvz3xZoeo5--j9mFDf-Zpo8EC8"
-                        allowfullscreen></iframe>
+                    {{{showMap}}}
                 </div>
             </div>
         </div>

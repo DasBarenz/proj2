@@ -2,12 +2,10 @@ var db = require('../models');
 
 module.exports = function (app) {
   var drugstoreLink = "";
-  var severity = "";
-  var cureList = ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"];
-  var medicineList = ["Pain Relievers (like ibuprofen or acetaminophen) to refuce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"];
+  var results;
   var message = ["Hope you feel better soon!", "Wishing you a speedy recovery!", "Sending good, healthy vibes your way!", "Hang in there! Better days are coming!"];
-  var rquote = getRandomQuote(message);
 
+  var rquote = getRandomQuote(message);
   console.log(rquote);
 
   function getRandomQuote(message) {
@@ -34,12 +32,9 @@ module.exports = function (app) {
         //   var lng = dbZipCodes.lng;
         //   console.log(lat, lng);
 
-        // TODO call Walgreen API with lat and lng to get URL for nearby stores
-
         res.json(dbUserInfo);
       });
   });
-  // });
 
   // Loads the symptoms page with the user's name
   app.get("/api/user/:username", function (req, res) {
@@ -49,20 +44,18 @@ module.exports = function (app) {
   // Loads the results page with the user's data
   app.get("/api/user/:username/results", function (req, res) {
 
-    // Compute severity
-    if (score <= 3) {
-      severity = "cold or mild";
-    }
-    else if (score <= 6) {
-      severity = "moderate flu";
-    }
-    else {
-      severity = "severe flu";
+    var hbsObj = {
+      name: req.params.username,
+      severity: results.severity,
+      cureList: results.cureList,
+      drugstoreLink: drugstoreLink,
+      rquote: rquote,
+      medicineList: results.medicineList,
+      medicineHeader: results.medicineHeader,
+      showMap: results.showMap
     }
 
-    // TODO expand to include severity, medicine list and Walgreens link
-
-    res.render("results", { name: req.params.username, severity: severity, cureList: cureList, drugstoreLink: drugstoreLink, rquote: rquote, medicineList: medicineList })
+    res.render("results", hbsObj);
   });
 
   // Get the number of symptoms and add to the database
@@ -70,9 +63,18 @@ module.exports = function (app) {
     db.UserInfo
       .update({ score: req.body.score }, { where: { id: req.body.id } })
       .then(function (dbUserInfos) {
+        // Compute severity
+        var score = req.body.score;
 
-        // remote score
-        score = req.body.score;
+        if (score <= 3) {         // mild
+          results = getResults(0);
+        }
+        else if (score <= 6) {    // moderate
+          results = getResults(1);
+        }
+        else {                    // severe
+          results = getResults(2);
+        }
 
         res.json(dbUserInfos);
       });
@@ -102,4 +104,32 @@ module.exports = function (app) {
   });
 };
 
+// Function to point to the correct results to send based on number of symptoms clicked (severity)
+function getResults(indx) {
+  var results = [
+    {
+      severity: "a cold or a mild flu",
+      medicineHeader: "",
+      cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
+      medicineList: [],
+      showMap: ""
+    },
+    {
+      severity: "a moderate flu",
+      medicineHeader: "We suggest that you get some medication. Here is a list:",
+      cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
+      medicineList: ["Pain Relievers (like ibuprofen or acetaminophen) to reduce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"],
+      showMap: ""
+    },
+    {
+      severity: "a severe flu",
+      medicineHeader: "We suggest that you get some medication. Here is a list:",
+      cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
+      medicineList: ["Pain Relievers (like ibuprofen or acetaminophen) to reduce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"],
+      showMap: "Here is a map to some pharmacies in your area. <iframe id='location-map' src='https://www.google.com/maps/embed/v1/search?q=pharmacy&&zoom=13&key=AIzaSyCBAUrhIbvz3xZoeo5--j9mFDf-Zpo8EC8' allowfullscreen ></iframe >"
+    }
+  ];
+
+  return results[indx];
+}
 

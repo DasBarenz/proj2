@@ -540,6 +540,7 @@ header:hover {
    margin: -55px 30px;
    line-height: 45px;
    font-family: 'Caveat', cursive;
+   padding-right: 10px;
 }
 
 .result-message2 {
