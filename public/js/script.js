@@ -32,49 +32,44 @@ $(".check-yes").click(function () {
                 window.location.href = `/api/user/${localStorage.userName}`
             }
         );
-        // console.log("Checking yes.")
-        // localStorage.userName = "Sarah";
-        //         localStorage.userId = "1";
-        //         localStorage.zipCode = "80212";
-        //         window.location.href = `/api/user/${localStorage.userName}`
     }
 });
 
 // Header message
-$("header").hover(function () {
-    $("#header-message").show();
-},
-    function () {
-        $("#header-message").hide();
-    });
+$(document).ready(function () {
+    $("#header-message").hide();
 
-// Count symptoms
-// function symptomClick() {
-//     console.log($(this));
-//     nSymptoms++;
-// }
+    $("header").hover(function () {
+        $("#header-message").show();
+    },
+        function () {
+            $("#header-message").hide();
+        });
+});
+
+
+//symptoms check btn
 var clickedBtns = [];
 
-$(document).on('click','.sickboy', function(){
+$(document).on('click', '.sickboy', function () {
     var elementToChangeBorderId = $(this).attr('id');
     var potentialIndexOfEl = clickedBtns.indexOf(elementToChangeBorderId);
-    if(potentialIndexOfEl > -1){
+    if (potentialIndexOfEl > -1) {
         clickedBtns.splice(potentialIndexOfEl, 1);
         revertBorderGray(elementToChangeBorderId);
     }
-    else{
+    else {
         clickedBtns.push(elementToChangeBorderId);
         changeBorderGray(elementToChangeBorderId);
     }
-   
 });
 
-function changeBorderGray(id){
+function changeBorderGray(id) {
     $(`#${id}`).removeClass('unselected-symptom');
     $(`#${id}`).addClass('selected-symptom');
 }
 
-function revertBorderGray(id){
+function revertBorderGray(id) {
     $(`#${id}`).removeClass('selected-symptom');
     $(`#${id}`).addClass('unselected-symptom');
 }
@@ -92,11 +87,3 @@ function getResults() {
     );
 };
 
-// get info from results.handelbars page, then
-// if (localStorage.score >= 7) { 
-//     //  put API route for severe or.... insert into div "We are sorry you are feeling so under-the-weather. You may need to contact you doctor."
-//   } else if ( localStorage.score >= 3) {
-//       //put API route for moderate or.... insert into div "We are sorry you're sick! You may need some over-the-counter medication. Please discuss with a pharmacist at the following locations." DISPLAY MAP
-//   } else {
-//       //put API route for minimum or .... insert into div "Some preventative measures may keep you from getting sick! We recommend......"
-//   }
