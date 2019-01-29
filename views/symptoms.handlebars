@@ -8,7 +8,7 @@
 <div id="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="main-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br>
+            <div class="main-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br><br>
                 Are you not feeling well? <br>
                 Which symptoms are you feeling?
 
@@ -72,13 +72,12 @@
                     <span class="symptom-text10">Diarrhea</span>
                 </div>
 
-                <div class="message-for-click">Then click the button on the right for your results.</div>
+                <div class="message-for-click">Then click the button on the right for getting the result.</div>
             </section>
         </div>
 
         <div class="col-md-1">
-            <div id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</div>
-            <span id="btn-check-message"></span>
+            <button id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</button>
         </div>
         <div class="col-md-1"></div>
 
@@ -88,9 +87,15 @@
         <div class="col-md-12">
         </div>
     </div>
-
-
-
+    
+<footer>
+    <div class="warning"><br>uFlu does not provide medical advice. It is intended for informational purposes only. It is
+        not a substitute for professional medical advice, diagnosis or treatment. Never ignore professional medical
+        advice in seeking treatment because of something you have read on the uFlu site. If you think you may have a
+        medical emergency, immediately call your doctor or dial 911.</div>
+    <br>
+    <div class="copyright">uFlu?&copy 2019 || <a href="mailto: team@uflu.com">Contact uFlu</a></div>
+</footer>
 
 </div>
 
@@ -108,5 +113,3 @@
         </div>
     </div>
 </div>
-
-<footer>uFlu? &copy 2019</footer>
