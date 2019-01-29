@@ -127,7 +127,6 @@ header {
    top: 0;
    left: 0;
    right: 0; 
-   display: inline-flex;
     /* overflow: auto; */
 }
 
@@ -156,65 +155,18 @@ header:hover {
    color: #fff;
    margin-left: 400px;
    position:absolute;
-   -webkit-animation: move 1s infinite; /* Safari 4.0 - 8.0 */
-   -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+   -webkit-animation: move 1s infinite; 
+   -webkit-animation-direction: alternate; 
    animation: move 1s infinite;
    animation-direction: alternate;
    z-index: 3;
+   font-weight: 900;
 }
 
 @-webkit-keyframes move {
   from {top: 150px;}
   to {top: 25px;}
 }
-
-/*side nav*/
-.nav-icon {
-   margin-top: 150px;
-   /* top: 330; */
-   font-size: 30px;
-   cursor: pointer;
-}
-.sidenav {
-   height: auto;
-   width: 0;
-   position: fixed;
-   z-index: 1;
-   top: 40;
-   left: 0;
-   background-color: rgba(78, 70, 63, 0.8);
-   overflow-x: hidden;
-   transition: 0.5s;
-   padding-top: 7px;
-   font-family: 'Maven Pro', sans-serif;
-}
-
-.sidenav a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
 
 
 /*symptoms*/
@@ -499,24 +451,24 @@ header:hover {
    background-color: rgb(129, 120, 104);
    color: #fff;
    padding: 10px 25px;
-   width: 180px;
+   width: 105px;
    font-size: 20px;
    margin-top: 250px;
+   margin-right: 60px;
    cursor: pointer;
-   align-content: initial;
+   /* align-content: initial; */
    font-family: 'Maven Pro', sans-serif;
    transition: 1s ease-in-out;   
 }
 
-/* .symptom-check-btn:hover {
+.symptom-check-btn:hover {
    background-color: rgba(173, 162, 142, 0.7);
    color: #fff;
-   width: 480px;
-   margin-top: 250px;
-   transform: scale(1.8);
+   width: 110px;
+   transform: scale(1.2);
    font-family: 'Grand Hotel', cursive;
-   font-size: 30px;
-} */
+   /* font-size: 30px; */
+}
 
 .message-for-click {
    font-family: 'Quicksand', sans-serif;
@@ -568,22 +520,10 @@ header:hover {
 /*results*/
 .desk-bg {
    background-image: url("../img/desk-bg.png");
-   background-position: center; 
    background-repeat: no-repeat; 
-   background-size: cover; 
-   height: auto;
+   background-size: cover;
+   height: 1000px; 
    position: relative;
-}
-
-.result-message {
-   width: 780px;
-   height: 920px;
-   margin: 220px 90px;
-   background-color: rgb(231, 235, 235);
-   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
-   transform: rotate(-5deg);
-   -ms-transform: rotate(-5deg); /* IE 9 */
-   -webkit-transform: rotate(-5deg); /* Safari and Chrome */
 }
 
 .message-logo {
@@ -597,12 +537,161 @@ header:hover {
    text-align: right;
 }
 
-.result-text {
-   font-size: 28px;
+.result-message1 {
+   position: absolute;
+   float: left;
+   width: 560px;
+   height: 720px;
+   margin: 200px 400px;
+   background-color: rgb(231, 235, 235);
+   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+   transform: rotate(-4deg);
+   -ms-transform: rotate(-4deg); 
+   -webkit-transform: rotate(-4deg);
+   z-index: 3
+} 
+.result-text1 {
+   font-size: 32px;
    color: rgb(93, 93, 93);
-   margin: 30px;
-   line-height: 39px;
+   margin: -25px 30px;
+   line-height: 42px;
+   font-family: 'Caveat', cursive;
 }
+
+.result-message2 {
+   position: absolute;
+   float: left;
+   margin-top: 420px;
+   margin-left: -10px; 
+   width: 390px;
+   height: 550px;
+   background-image: url("../img/notepad1.png");
+   background-repeat: no-repeat; 
+   background-size: contain;
+   transform: rotate(-15deg);
+   -ms-transform: rotate(-15deg); 
+   -webkit-transform: rotate(-15deg);
+} 
+
+.result-text2 {
+   font-size: 21px;
+   color: rgb(93, 93, 93);
+   padding : 85px 45px 5px 50px;
+   line-height: 29px;
+   font-family: 'Caveat', cursive;
+   font-weight: 800;
+}
+
+.result-message3 {
+   position: absolute;
+   float: right;
+   width: 500px;
+   height: 620px;
+   margin-top: 370px;
+   margin-left: 980px;
+   background-color: rgb(126, 102, 72);
+   border-radius: 25px;
+   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+   transform: rotate(8deg);
+   -ms-transform: rotate(8deg);
+   -webkit-transform: rotate(8deg);
+   font-family: 'Caveat', cursive;
+}
+
+.result-text3 {
+   font-size: 30px;
+   color: rgb(93, 93, 93);
+   background-color: #fff;
+   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+   margin: 30px;
+   line-height: 29px;
+   padding: 100px 30px 50px 30px;
+   height: 570px;
+} 
+
+.result-message4 {
+   position: absolute;
+   float: right;
+   width: 200px;
+   height: 200px;
+   margin-top: 150px;
+   margin-left: 100px;
+   background-color: rgb(243, 232, 136);
+   box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+   transform: rotate(-19deg);
+   -ms-transform: rotate(-19deg);
+   -webkit-transform: rotate(-19deg);
+   z-index: 3;
+}
+
+.result-text4{
+   font-size: 25px;
+   color: rgb(93, 93, 93);
+   margin: 50px 15px;
+   line-height: 28px;
+   font-family: 'Caveat', cursive;
+}
+
+#location-map {
+   width: 350px;
+   height: 250px;
+   margin: 20px;
+}
+
+#teladoc-link{
+   color: rgb(20, 184, 196);
+}
+
+.result-icons {
+    position: absolute;
+   float: left;
+}
+
+.pad-holder {
+   /* background-image: url("./img/holder.png");
+   background-repeat: no-repeat; 
+   background-size: contain; */
+   top: 380px;
+   left: 1200px;
+   position: absolute;
+   float: left;
+   z-index: 28;
+   border: 1px solid black;
+   background-color: yellow;
+}
+
+
+.pen {
+   background-image: url("./img/pen.png");
+    background-repeat: no-repeat; 
+   background-size: contain;
+   z-index: 28;
+   position: absolute;
+   float: left;
+   top: 650px;
+   left: 730px;
+   transform: rotate(-15deg);
+   -ms-transform: rotate(-15deg);
+   -webkit-transform: rotate(-15deg);
+
+}
+
+.pencil {
+   /* background-image: url("./img/pencil.png");
+   background-repeat: no-repeat; 
+   background-size: contain; */
+   z-index: 28;
+   position: absolute;
+   float: left;
+   top: 700px;
+   left: 780px;
+   transform: rotate(-35deg);
+   -ms-transform: rotate(-35deg);
+   -webkit-transform: rotate(-35deg);
+   border: 1px solid black;
+}
+
+
 
 
 
