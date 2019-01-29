@@ -56,13 +56,11 @@ html, body {
 }
 
 #input-name {
-   /* font-family: 'Thasadith', sans-serif; */
    margin-top: -8px;
    font-size: 17px;
 }
 
 #input-zipcode {
-   /* font-family: 'Thasadith', sans-serif; */
    margin-top: -8px;
    font-size: 17px;
 }
@@ -122,12 +120,11 @@ header {
    height: 60px;
    background-color: rgb(201, 189, 165);
    transition: 1s;
-   z-index: 2;
+   z-index: 9;
    position: fixed;
    top: 0;
    left: 0;
    right: 0; 
-    /* overflow: auto; */
 }
 
 header:hover {
@@ -138,7 +135,7 @@ header:hover {
    opacity: 0.4;
 }
 
-.logo {
+.logo a {
   font-family: 'Grand Hotel', cursive;
    font-weight: bolder;
    color: #fff;
@@ -147,6 +144,10 @@ header:hover {
    font-size: 40px;
    letter-spacing: 2px;
    position: absolute;
+}
+
+.logo a:hover {
+   text-decoration: none;
 }
 
 #header-message {
@@ -456,7 +457,6 @@ header:hover {
    margin-top: 250px;
    margin-right: 60px;
    cursor: pointer;
-   /* align-content: initial; */
    font-family: 'Maven Pro', sans-serif;
    transition: 1s ease-in-out;   
 }
@@ -467,14 +467,26 @@ header:hover {
    width: 110px;
    transform: scale(1.2);
    font-family: 'Grand Hotel', cursive;
-   /* font-size: 30px; */
+}
+#click-message{
+   display: none;
+   font-family: 'Maven Pro', sans-serif;
+   font-size: 15px;
+   position: absolute;
+   z-index: 5;
+   padding: 15px;
+   margin-top: 10px;
+   margin-left: -20px;
+   width: 220px;
+   color: rgb(63, 62, 62);
 }
 
 .message-for-click {
    font-family: 'Quicksand', sans-serif;
-   font-size: 20px;
+   font-size: 22px;
    padding-top:10px;
    color: rgb(41, 39, 35);
+   margin: 10px;
 }
 
 .loading{
@@ -482,39 +494,6 @@ header:hover {
    font-family: 'Quicksand', sans-serif;
    color: rgb(129, 120, 104);
 }
-
- /*Overlay*/
-        .overlay {
-            height: 100%;
-            width: 100%;
-            display: none;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: rgb(166, 216, 224);
-            overflow-y: hidden;
-            transition: 0.5s;
-        }
-
-        .overlay-content {
-            position: relative;
-            top: 25%;
-            width: 100%;
-            margin-top: 30px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .overlay a {
-                font-size: 20px
-            }
-            .overlay {
-                font-size: 40px;
-                top: 15px;
-                right: 35px;
-            }
-        }
-
 
 
 /*results*/
@@ -537,12 +516,17 @@ header:hover {
    text-align: right;
 }
 
+#diagnosis-result {
+   font-weight: bold;
+   font-size: 38px;
+}
+
 .result-message1 {
    position: absolute;
    float: left;
    width: 560px;
    height: 720px;
-   margin: 200px 400px;
+   margin: 150px 400px;
    background-color: rgb(231, 235, 235);
    box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
    transform: rotate(-4deg);
@@ -553,8 +537,8 @@ header:hover {
 .result-text1 {
    font-size: 32px;
    color: rgb(93, 93, 93);
-   margin: -25px 30px;
-   line-height: 42px;
+   margin: -55px 30px;
+   line-height: 45px;
    font-family: 'Caveat', cursive;
 }
 
@@ -563,8 +547,8 @@ header:hover {
    float: left;
    margin-top: 420px;
    margin-left: -10px; 
-   width: 390px;
-   height: 550px;
+   width: 500px;
+   height: 560px;
    background-image: url("../img/notepad1.png");
    background-repeat: no-repeat; 
    background-size: contain;
@@ -574,12 +558,15 @@ header:hover {
 } 
 
 .result-text2 {
-   font-size: 21px;
+   font-size: 24px;
    color: rgb(93, 93, 93);
-   padding : 85px 45px 5px 50px;
+   padding-top: 85px;
+   padding-left: 50px;
+   padding-right: 10px;
    line-height: 29px;
    font-family: 'Caveat', cursive;
    font-weight: 800;
+   width: 370px;
 }
 
 .result-message3 {
@@ -632,6 +619,15 @@ header:hover {
    font-family: 'Caveat', cursive;
 }
 
+.qr-message {
+   font-size: 25px;
+   color: rgb(93, 93, 93);
+   margin: 30px 15px;
+   line-height: 28px;
+   font-family: 'Caveat', cursive;
+   width: 400px;
+}
+
 #location-map {
    width: 350px;
    height: 250px;
@@ -642,57 +638,53 @@ header:hover {
    color: rgb(20, 184, 196);
 }
 
-.result-icons {
-    position: absolute;
-   float: left;
-}
-
 .pad-holder {
-   /* background-image: url("./img/holder.png");
+   background-image: url("../img/holder.png");
    background-repeat: no-repeat; 
-   background-size: contain; */
+   background-size: contain;
    top: 380px;
    left: 1200px;
    position: absolute;
    float: left;
-   z-index: 28;
-   border: 1px solid black;
-   background-color: yellow;
+   z-index: 8;
+   width: 200px;
+   height: 100px;
+   transform: rotate(8deg);
+   -ms-transform: rotate(8deg);
+   -webkit-transform: rotate(8deg);
 }
 
-
 .pen {
-   background-image: url("./img/pen.png");
+   background-image: url("../img/pen.png");
     background-repeat: no-repeat; 
    background-size: contain;
-   z-index: 28;
+   z-index: 8;
    position: absolute;
    float: left;
    top: 650px;
-   left: 730px;
-   transform: rotate(-15deg);
-   -ms-transform: rotate(-15deg);
-   -webkit-transform: rotate(-15deg);
-
+   left: 800px;
+   transform: rotate(-111deg);
+   -ms-transform: rotate(-111deg);
+   -webkit-transform: rotate(-111deg);
+   width: 280px;
+   height: 150px;
 }
 
 .pencil {
-   /* background-image: url("./img/pencil.png");
+   background-image: url("../img/pencil.png");
    background-repeat: no-repeat; 
-   background-size: contain; */
-   z-index: 28;
+   background-size: contain;
+   z-index: 8;
    position: absolute;
    float: left;
-   top: 700px;
-   left: 780px;
-   transform: rotate(-35deg);
-   -ms-transform: rotate(-35deg);
-   -webkit-transform: rotate(-35deg);
-   border: 1px solid black;
+   top: 280px;
+   left: 900px;
+   transform: rotate(-165deg);
+   -ms-transform: rotate(-165deg);
+   -webkit-transform: rotate(-165deg);
+   width: 360px;
+   height: 150px;
 }
-
-
-
 
 
 /*footer*/

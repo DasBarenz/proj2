@@ -7,6 +7,7 @@ module.exports = function (app) {
   var medicineList = ["Pain Relievers (like ibuprofen or acetaminophen) to refuce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"];
   var message = ["Hope you feel better soon!", "Wishing you a speedy recovery!", "Sending good, healthy vibes your way!", "Hang in there! Better days are coming!"];
   var rquote = getRandomQuote(message);
+
   console.log(rquote);
 
   function getRandomQuote(message) {
@@ -14,8 +15,6 @@ module.exports = function (app) {
     return message[Math.floor(Math.random() * message.length)];
     location.reload();
   }
-
-
 
   // Get user name and zip code from welcome page and create new user
   app.post("/api/welcome", function (req, res) {
@@ -75,20 +74,9 @@ module.exports = function (app) {
         // remote score
         score = req.body.score;
 
-        // if (score <= 3) {
-        //   severity = "cold or mild";
-        // }
-        // else if (score <= 6) {
-        //   severity = "moderate flu";
-        // }
-        // else {
-        //   severity = "severe flu";
-        // }
-
         res.json(dbUserInfos);
       });
   });
-
 
   // Get all user data
   app.get('/api/userdata', function (req, res) {

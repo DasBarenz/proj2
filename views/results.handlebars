@@ -1,5 +1,5 @@
 <header>
-    <div class="logo"> uFlu? </div>
+    <div class="logo"><a href="/">uFlu? </a></div>
     <span id="header-message">{{rquote}}</span>
 </header>
 
@@ -15,9 +15,10 @@
                     Below is a list of suggestions to help you feel more comfortable:<br>
                     <span id="items">{{#each cureList}}<li>{{this}}</li>{{/each}}</span>
 
-                    Here is a <a href="http://api.qrserver.com/v1/create-qr-code/?data=uFlu%3F%20Shopping%20List%3A%20%7C%20Cough%20Drops%20%7C%20Facial%20Tissue%20%7C%20Hand%20Sanitizer%20%7C%20Decongestant%20%7C%20Pain%20Reliever&size=100x100"></a>
-                    link to a list of shopping items for you.
-
+                    <div class="qr-message">
+                        Here is a <a href="http://api.qrserver.com/v1/create-qr-code/?data=uFlu%3F%20Shopping%20List%3A%20%7C%20Cough%20Drops%20%7C%20Facial%20Tissue%20%7C%20Hand%20Sanitizer%20%7C%20Decongestant%20%7C%20Pain%20Reliever&size=100x100"
+                            id="teladoc-link" target="blank">QR code</a> to a list of shopping items for you.
+                    </div>
                 </div>
             </div>
             <div class="result-message2">
@@ -31,28 +32,26 @@
                 <div class="result-text3">
                     Here is a map to some pharmacies in your area. <iframe id="location-map" src="https://www.google.com/maps/embed/v1/search?q=pharmacy&&zoom=13&key=AIzaSyCBAUrhIbvz3xZoeo5--j9mFDf-Zpo8EC8"
                         allowfullscreen></iframe>
-                    <br>
                 </div>
-            </div>
-
-            <div class="result-message4">
-                <div class="result-text4">
-                    Also, if you can't contact your family doctor, try <a href="https://www.teladoc.com/" id="teladoc-link"
-                        target="blank">Teladoc</a>.
-                </div>
-            </div>
-            <div class="result-icons">
-                <div class="pad-holder"></div>
-                <div class="pen"><img scr="/img/pen.png" /></div>
-                <div class="pencil"><img scr="../public/img/pencil.png" /></div>
             </div>
         </div>
 
-        <footer>
-
-        </footer>
-
+        <div class="result-message4">
+            <div class="result-text4">
+                Also, if you can't contact your family doctor, try <a href="https://www.teladoc.com/" id="teladoc-link"
+                    target="blank">Teladoc</a>.
+            </div>
+        </div>
+        <div class="pad-holder"></div>
+        <div class="pen"></div>
+        <div class="pencil"></div>
     </div>
+
+    <footer>
+
+    </footer>
+
+</div>
 
 </div>
 

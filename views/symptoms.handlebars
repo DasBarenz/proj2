@@ -1,5 +1,5 @@
 <header>
-    <div class="logo">uFlu? </div>
+    <div class="logo"><a href="/">uFlu? </a></div>
 
     <span id="header-message">"Hope you feel better soon!"</span>
 
@@ -73,12 +73,16 @@
                 </div>
 
                 <div class="message-for-click">Then click the button on the right for your results.</div>
+
+                <audio id="ring-04">
+                    <source src="/media/ring-04.mp3" type="audio/mp3"></audio>
+
             </section>
         </div>
 
         <div class="col-md-1">
             <div id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</div>
-            <span id="btn-check-message"></span>
+            <span id="click-message">Please select your symptoms.</span>
         </div>
         <div class="col-md-1"></div>
 
@@ -89,24 +93,6 @@
         </div>
     </div>
 
-
-
-
-</div>
-
-<!--overlay-->
-<div id="myLoading" class="overlay">
-
-    <div class="overlay-content">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="loading">Loading...</div>
-            <div class="col-md-8">
-            </div>
-
-            <div class="col-md-2"></div>
-        </div>
-    </div>
 </div>
 
 <footer>uFlu? &copy 2019</footer>

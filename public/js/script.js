@@ -47,7 +47,6 @@ $(document).ready(function () {
         });
 });
 
-
 //symptoms check btn
 var clickedBtns = [];
 
@@ -67,6 +66,8 @@ $(document).on('click', '.sickboy', function () {
 function changeBorderGray(id) {
     $(`#${id}`).removeClass('unselected-symptom');
     $(`#${id}`).addClass('selected-symptom');
+    playAudio("ring-04");
+
 }
 
 function revertBorderGray(id) {
@@ -76,10 +77,16 @@ function revertBorderGray(id) {
 
 // Get results when button pushed
 function getResults() {
+    if (clickedBtns.length == 0) {
+        $("#click-message").show();
+        setTimeout(function () {
+            $("#click-message").hide();
+        }, 2000);
+        return;
+    }
     $.post("/api/userdata", {
         id: localStorage.userId,
         score: clickedBtns.length
-        // how can we push this length to local storage? this is what we will need below if we don't go a DB option with counting the score
     }).then(
         function (dbUserInfo) {
             window.location.href = `/api/user/${localStorage.userName}/results`
@@ -87,3 +94,8 @@ function getResults() {
     );
 };
 
+// Play audio
+function playAudio(elName) {
+    var yourRing = document.getElementById(elName);
+    yourRing.play();
+}
