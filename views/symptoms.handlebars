@@ -5,7 +5,7 @@
 
 </header>
 
-<div id="container-fluid">
+<div id="container">
     <div class="row">
         <div class="col-md-12">
             <div class="main-text">Hi!&nbsp <span id="user-name">{{name}}</span>, <br><br>
@@ -20,7 +20,7 @@
         <div class="col-md-1"></div>
 
         <div class="col-md-9">
-            <section class="sickboy-imgbtns" class="clearfix">
+            <div class="sickboy-imgbtns clearfix">
 
                 <div class="boy-container1 boy-container">
                     <img src="/img/sick-boy-sorethroat.png" id="btn-boy1" class="btn-sickboy1 sickboy unselected-symptom " />
@@ -72,22 +72,19 @@
                     <span class="symptom-text10">Diarrhea</span>
                 </div>
 
-front-end5
                 <div class="message-for-click">Then click the button on the right for your results.</div>
 
                 <audio id="ring-04">
                     <source src="/media/ring-04.mp3" type="audio/mp3"></audio>
 
-
-            </section>
+            </div>
         </div>
 
         <div class="col-md-1">
-front-end5
             <div id="symptoms-btn" class="symptom-check-btn" onclick="getResults()">meFlu?</div>
             <span id="click-message">Please select your symptoms.</span>
-
         </div>
+
         <div class="col-md-1"></div>
 
     </div>
@@ -96,8 +93,16 @@ front-end5
         <div class="col-md-12">
         </div>
     </div>
-front-end5
 
 </div>
 
-<footer>uFlu? &copy 2019</footer>
+<div class="footer">
+    <div class="warning"><br>uFlu does not provide medical advice. It is intended for informational purposes only. It
+        is
+        not a substitute for professional medical advice, diagnosis or treatment. Never ignore professional medical
+        advice in seeking treatment because of something you have read on the uFlu site. If you think you may have a
+        medical emergency, immediately call your doctor or dial 911.</div>
+    <strong>uFlu?</strong> &copy 2019 | Contact Us at &nbsp;<i class="fas fa-envelope"></i> &nbsp;<i class="fab fa-twitter"></i>
+    &nbsp;<i class="fab fa-linkedin-in"></i>&nbsp;
+    <i class="fab fa-facebook-square"></i>
+</div>

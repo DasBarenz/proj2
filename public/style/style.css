@@ -6,7 +6,7 @@ html, body {
    padding: 0;
    margin: 0;
    height: 100%;   
-   background-color: rgb(121, 112, 101);
+   background-color: #fff;
 }
 
 .clearfix::after {
@@ -174,7 +174,7 @@ header:hover {
 .main-text {
    font-size: 25px;
    margin-left: 200px;
-   margin-top: 150px;
+   margin-top: 100px;
    font-family: 'Quicksand', sans-serif;
    padding-bottom: 20px;
    color: rgb(41, 39, 35);
@@ -479,6 +479,7 @@ header:hover {
    margin-left: -20px;
    width: 220px;
    color: rgb(63, 62, 62);
+   margin-bottom: 66px;
 }
 
 .message-for-click {
@@ -489,12 +490,6 @@ header:hover {
    margin: 10px;
 }
 
-.loading{
-   font-size: 27px;
-   font-family: 'Quicksand', sans-serif;
-   color: rgb(129, 120, 104);
-}
-
 
 /*results*/
 .desk-bg {
@@ -503,6 +498,10 @@ header:hover {
    background-size: cover;
    height: 1000px; 
    position: relative;
+}
+
+#result-content {
+      background-color: rgb(201, 189, 165);
 }
 
 .message-logo {
@@ -532,7 +531,7 @@ header:hover {
    transform: rotate(-4deg);
    -ms-transform: rotate(-4deg); 
    -webkit-transform: rotate(-4deg);
-   z-index: 3
+   z-index: 3;
 } 
 .result-text1 {
    font-size: 32px;
@@ -657,7 +656,7 @@ header:hover {
    left: 1200px;
    position: absolute;
    float: left;
-   z-index: 8;
+   z-index: 5;
    width: 200px;
    height: 100px;
    transform: rotate(8deg);
@@ -669,7 +668,7 @@ header:hover {
    background-image: url("../img/pen.png");
     background-repeat: no-repeat; 
    background-size: contain;
-   z-index: 8;
+   z-index: 5;
    position: absolute;
    float: left;
    top: 650px;
@@ -685,7 +684,7 @@ header:hover {
    background-image: url("../img/pencil.png");
    background-repeat: no-repeat; 
    background-size: contain;
-   z-index: 8;
+   z-index: 5;
    position: absolute;
    float: left;
    top: 280px;
@@ -697,22 +696,29 @@ header:hover {
    height: 150px;
 }
 
-/*footer*/
-
-front-end5
-/*footer*/
-footer {
-    background: rgb(173, 162, 142);
-    color: #fff;
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    margin-top: 80px;
-    padding-right: 70px;
-    text-align: right;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;   
+.footer {
+   background-color: rgb(121, 112, 101);
+   color: #fff;
+   font-size: 12px;
+   letter-spacing: 2px;
+   text-align: center;
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   padding: 5px;
+   width: 100%;
+   z-index: 8;
+   height: 66px;
+   
 }
+
+.warning {
+   font-size: 10px;
+   line-height: 12px;
+   text-align: center;
+   padding-bottom: 5px;
+   margin-top: -7px;
+
+
+}
+
