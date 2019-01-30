@@ -46,12 +46,14 @@ module.exports = function (app) {
 
     var hbsObj = {
       name: req.params.username,
+      resultHeader: results.resultHeader,
       severity: results.severity,
+      suggestionHeader: results.suggestionHeader,
       cureList: results.cureList,
+      medicineHeader: results.medicineHeader,
+      medicineList: results.medicineList,
       drugstoreLink: drugstoreLink,
       rquote: rquote,
-      medicineList: results.medicineList,
-      medicineHeader: results.medicineHeader,
       showMap: results.showMap
     }
 
@@ -108,23 +110,29 @@ module.exports = function (app) {
 function getResults(indx) {
   var results = [
     {
-      severity: "a cold or a mild flu",
+      resultHeader: "Based on your symptoms, you might have",
+      severity: "a cold or a mild flu.",
+      suggestionHeader: "But an ounce of prevention is worth a pound of cure. Stay hydrated and rested; make sure to wash your hands frequently.",
+      resultHeadercureList: [],
       medicineHeader: "",
-      cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
       medicineList: [],
       showMap: ""
     },
     {
-      severity: "a moderate flu",
-      medicineHeader: "We suggest that you get some medication. Here is a list:",
+      resultHeader: "Oh, we're sorry you're not feeling well! It sounds like you have",
+      severity: "a moderate flu.",
+      suggestionHeader: "You likely need extra rest, more water than normal, some decongestants, and pain relievers. Below is a list of suggetions to help you feel more comfortable:",
       cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
+      medicineHeader: "We suggest that you get some medication. Here is a list:",
       medicineList: ["Pain Relievers (like ibuprofen or acetaminophen) to reduce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"],
       showMap: ""
     },
     {
-      severity: "a severe flu",
-      medicineHeader: "We suggest that you get some medication. Here is a list:",
+      resultHeader: "Oh no! It sounds like you're having ",
+      severity: "a severe flu!",
+      suggestionHeader: "You might want to consider making an appointment with your doctor. Below is a list of suggetions to help you feel more comfortable:",
       cureList: ["Stay home and rest", "Drink plenty of fluids", "Run a humidifier", "Try a warm compress", "Eat some fruits and veggies"],
+      medicineHeader: "We suggest that you get some medication. Here is a list:",
       medicineList: ["Pain Relievers (like ibuprofen or acetaminophen) to reduce fever, headaches, and body aches.", "Decongestants (like pseudoephedrine) to help open nasal pasages and relieve pressure", "Cough Suppressants (like dextromethorphan) to help soothe a dry cough", "Expectorants to help loosen mucus and helpful for wet coughs", "Antihistimines to help you sleep"],
       showMap: "Here is a map to some pharmacies in your area. <iframe id='location-map' src='https://www.google.com/maps/embed/v1/search?q=pharmacy&&zoom=13&key=AIzaSyCBAUrhIbvz3xZoeo5--j9mFDf-Zpo8EC8' allowfullscreen ></iframe >"
     }

@@ -11,8 +11,9 @@
             <div class="result-message1">
                 <div class="message-logo">uFlu? </div>
                 <div class="result-text1">Hi <span id="user-name">{{name}}</span>, <br>
-                    Based on your symptoms, you might have <span id="diagnosis-result">{{severity}}.</span> <br>
-                    Below is a list of suggestions to help you feel more comfortable:<br>
+                    {{resultHeader}}
+                    <span id="diagnosis-result">{{severity}}</span> <br>
+                    {{suggestionHeader}}<br>
                     <span id="items">{{#each cureList}}<li>{{this}}</li>{{/each}}</span>
 
                     <div class="qr-message">

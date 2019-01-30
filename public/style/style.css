@@ -509,7 +509,7 @@ header:hover {
   font-family: 'Grand Hotel', cursive;
    font-weight: bolder;
    color: rgb(93, 93, 93);
-   padding-top: 50px;
+   padding-top: 36px;
    padding-right: 30px;
    font-size: 90px;
    letter-spacing: 2px;
@@ -525,7 +525,7 @@ header:hover {
    position: absolute;
    float: left;
    width: 560px;
-   height: 720px;
+   height: 750px;
    margin: 150px 400px;
    background-color: rgb(231, 235, 235);
    box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
@@ -538,9 +538,10 @@ header:hover {
    font-size: 32px;
    color: rgb(93, 93, 93);
    margin: -55px 30px;
-   line-height: 45px;
+   line-height: 40px;
    font-family: 'Caveat', cursive;
    padding-right: 10px;
+   padding-top: 10px
 }
 
 .result-message2 {
@@ -618,6 +619,15 @@ header:hover {
    margin: 50px 15px;
    line-height: 28px;
    font-family: 'Caveat', cursive;
+}
+
+.result-text1 li {
+   font-size: 30px;
+   color: rgb(93, 93, 93);
+   line-height: 25px;
+   font-family: 'Caveat', cursive;
+   padding-left: 10px;
+   padding-top: 10px;
 }
 
 .qr-message {
